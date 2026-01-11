@@ -1,0 +1,30 @@
+<div id="settings-container">
+    <div class="header">
+        <div title="Settings" class="heading">Settings</div>
+       <button title="Close" (click)="cancel()" class="btn btn-close"><i class="fa fa-close"></i></button>
+    </div>
+    <div class="body">
+        <label for="mBtn">Manual Save Button Enable : </label>
+        <input type="checkbox" class="btn" name="mBtn" id="mBtn" [checked]="configObj.isManual" (change)="setMBtn($event)"/> 
+        <br><br>
+        <label for="durBtn">Set Auto Save Duration : </label>
+        <input type="number" class="btn" max="60" min="1" [disabled]="configObj.isManual" [value]="configObj.duration" name="durBtn" id="durBtn" (blur)="setDBtn($event)"/> <span>Seconds</span>
+        <br><br>
+        <label for="titleBtn">Change Title : </label>
+        <input type="text" required [value]="configObj.title ? configObj.title : 'Jay Shree Krishna'" name="titleBtn" id="titleBtn" (blur)="setTBtn($event)"/>
+        <br><br>
+        <label for="goalCounter">Set Goal : </label>
+        <input type="number" required min="1" [value]="configObj.goal ? configObj.goal : 0" name="goalCounter" id="goalCounter" (blur)="setGoal($event)"/>
+        <br><br>
+        <label for="VibBtn">Vibrate on Goal reached : </label>
+        <input type="checkbox" class="btn" name="VibBtn" id="VibBtn" [checked]="configObj.isVibrate" (change)="setVibrate($event)"/> 
+        <br><br>
+        <label for="audiooBtn">Play Audio on Goal reached : </label>
+        <input type="checkbox" class="btn" name="audiooBtn" id="audiooBtn" [checked]="configObj.isAudio" (change)="setAudio($event)"/> 
+        <br><br>
+    </div>
+    <div class="footer">
+        <button class="btn btn-save default-btn" title="Save" (click)="save()">Save</button>
+        <button title="Close" tabindex="0" class="btn danger-btn" (click)="cancel()">Cancel</button>
+    </div>
+</div>

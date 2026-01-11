@@ -1,0 +1,72 @@
+#title{
+    font-size: 21px;
+    text-align: center;
+    min-width:35px;
+    margin: 5px 0 7px 0;
+}
+#msg {
+    color:orange;
+    text-align: center;
+    font-size: 25px;
+}
+#fullscreen-ele{
+    background-color: var(--bg-color);
+    overflow-y: auto;
+}
+#counter-container{
+    height: 87vh;
+    margin-top: 35px;
+    
+    &:hover{
+        border-radius: 11%;
+        box-shadow: 0px 1px 20px 0px red;
+    }
+
+    .btn-container{
+        margin:7px 0 7px 0;
+        display: flex;
+        justify-content: center;
+        column-gap: 91px;
+        .default-btn{
+            font-size: 17px;
+            color: black;
+            margin-top:15px;
+            &:hover{
+                color:blue;
+            }
+        }
+    }
+    #counter{
+        padding-top: 15px;
+        text-align: center;
+        font-size: 34px;
+        color:orange;
+        font-weight: 700;
+    }
+}
+.right-icon{
+    cursor: pointer;
+    float: right;
+    margin: 3px 7px 0 0;
+    
+    .fa-eye {
+        padding-left: 2px;
+    }
+}
+
+.spin{
+    &:hover{
+        animation: rotate-icon 1s linear infinite;
+    }
+}
+
+@keyframes rotate-icon {
+    100% {transform: rotate(360deg);}
+}
+
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+  

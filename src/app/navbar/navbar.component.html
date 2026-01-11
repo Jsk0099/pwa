@@ -1,0 +1,15 @@
+@if(navigationList?.length) {
+  <div class="nav-container">
+    <ul>
+      @for (item of navigationList; track $index) {
+        <li>
+          <button href='#' class="nav-btn" [id]="item.id" (click)="navigate(item.path,$event)">{{ item.displayName }}</button>
+        </li>
+      }
+      <li>
+        <i [title]="isDarkMode ? 'Light Mode' : 'Dark Mode'" class="nav-btn fa-solid " [ngClass]="{'fa-moon': !isDarkMode, 'fa-cloud-sun': isDarkMode}" (click)="toggleMode()"></i>
+      </li>
+    </ul>
+  </div>
+}
+  

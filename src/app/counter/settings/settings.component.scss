@@ -1,0 +1,40 @@
+#settings-container{
+    width:450px;
+    color: black;
+    background-color: white;
+    
+    .header{
+        padding: 5px;
+        background-color: blue;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        font-size: 21px;
+        .btn-close{
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 21px;
+        }
+        .heading{
+            font-weight: 500;
+        }
+    }
+    .body{
+        padding: 8px;
+    }
+    .footer{
+        padding: 5px;
+        display: flex;
+        justify-content: end;
+        .btn-save{
+            margin-right: 5px;
+        }
+    }
+
+    @media screen and (max-width:661px) {
+        width: 71vw;
+    }
+}
+
+

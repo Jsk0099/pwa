@@ -1,0 +1,18 @@
+<ng-container>
+    <div id="fullscreen-ele">
+        <div class="right-icon spin" [class.hide]="isFullScreen" title="Settings" (click)="openSettingModal()"><i class="fa fa-gear"></i></div>
+        <div class="right-icon spin" [class.hide]="isFullScreen" title="Reset Counter" (click)="resetCounter()"><i class="fa fa-refresh"></i></div>
+        <div  class="right-icon" [title]="(isFullScreen ? 'Exit' : 'Enter') + ' Fullscreen'" (click)="toggleFullScreen()"><i class="fa" [ngClass]="{'fa-compress': isFullScreen, 'fa-expand': !isFullScreen}"></i></div>
+        <div  class="right-icon" [title]="(isCounterShow ? 'Show' : 'Hide')+' Counter'" (click)="showHideCounter()"><i class="fa" [ngClass]="{'fa-eye-slash': isCounterShow, 'fa-eye': !isCounterShow}"></i></div>
+        <div id="title" class="prevent-select">{{configData.title ? configData.title : 'Jay Shree Krishna'}}</div>
+        <!-- <div id="title" contentEditable="true" (keydown)="validateInput($event)" (blur)="onTitleChange($event)" [innerHTML]="title"></div> -->
+        <div id="msg" *ngIf="!counter" >Please Click On Screen For Start Counting ...</div>
+        <div id="counter-container" class="prevent-select" (click)="isTouchDevice || increment()" (touchend)="isTouchDevice && increment()">
+            <div *ngIf="configData.isManual" class="btn-container">
+                <button class="cbtn default-btn" *ngIf="counter>0" (click)="saveCounter()">Save</button>
+                <button class="cbtn default-btn" *ngIf="isResume" (click)="resumeCounter()">Resume</button>
+            </div>
+            <div [title]="counter" *ngIf="counter" [class.hide]="isCounterShow" id="counter"> {{counter}} </div>
+        </div>
+    </div>
+</ng-container>
